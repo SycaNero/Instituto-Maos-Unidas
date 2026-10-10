@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doações | Instituto Mãos Unidas</title>
+  <meta name="description" content="Veja como doar para o Instituto Mãos Unidas e o que cada valor representa.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem('tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+  <link rel="stylesheet" href="/src/css/style.css">
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="container">
+      <a class="marca" href="/index.html"><img src="/favicon.svg" alt="" width="32" height="32">Instituto Mãos Unidas</a>
+      <nav aria-label="Menu principal">
+        <button type="button" class="sec menu-btn" aria-expanded="false" aria-controls="menu-lista">Menu</button>
+        <ul id="menu-lista">
+          <li><a href="/index.html">Início</a></li>
+          <li><a href="/doacoes.html" aria-current="page">Doações</a></li>
+          <li><a href="/voluntariado.html">Voluntariado</a></li>
+        </ul>
+      </nav>
+      <div class="ferramentas" role="group" aria-label="Opções de aparência">
+        <button type="button" class="sec" data-tema="escuro" aria-pressed="false">Modo escuro</button>
+        <button type="button" class="sec" data-tema="alto-contraste" aria-pressed="false">Alto contraste</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <section aria-labelledby="titulo-doacoes">
+      <div class="container">
+        <h1 id="titulo-doacoes">Faça uma doação</h1>
+        <p>Toda contribuição, grande ou pequena, ajuda a manter nossos projetos. Veja o que cada valor representa:</p>
+        <div class="grade">
+          <article class="cartao"><p class="numero">R$ 30</p><h2>Uma cesta de alimentos</h2><p class="sec-texto">Alimenta uma família por uma semana.</p></article>
+          <article class="cartao"><p class="numero">R$ 80</p><h2>Material escolar</h2><p class="sec-texto">Kit completo para uma criança no reforço escolar.</p></article>
+          <article class="cartao"><p class="numero">R$ 150</p><h2>Apoio mensal</h2><p class="sec-texto">Mantém um dia de cozinha solidária.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="alt" aria-labelledby="titulo-como-doar">
+      <div class="container">
+        <h2 id="titulo-como-doar">Como doar</h2>
+        <p>Este é um projeto acadêmico: os dados abaixo são fictícios.</p>
+        <ul>
+          <li>Pix (chave e-mail): <strong>doacoes@maosunidas.example</strong></li>
+          <li>Transferência: Banco 000, Agência 0000, Conta 00000-0</li>
+        </ul>
+        <p>Dúvidas? Veja como <a href="/voluntariado.html">ser voluntário(a)</a> ou volte ao <a href="/index.html">início</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Instituto Mãos Unidas (ONG fictícia para fins acadêmicos). Projeto sob licença MIT.</p>
+      <p><a href="#conteudo">Voltar ao conteúdo principal</a></p>
+    </div>
+  </footer>
+</body>
+</html>

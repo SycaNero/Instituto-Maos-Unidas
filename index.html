@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Início | Instituto Mãos Unidas</title>
+  <meta name="description" content="ONG que leva alimentação, educação e acolhimento a famílias vulneráveis.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem('tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+  <link rel="stylesheet" href="/src/css/style.css">
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="container">
+      <a class="marca" href="/index.html"><img src="/favicon.svg" alt="" width="32" height="32">Instituto Mãos Unidas</a>
+      <nav aria-label="Menu principal">
+        <button type="button" class="sec menu-btn" aria-expanded="false" aria-controls="menu-lista">Menu</button>
+        <ul id="menu-lista">
+          <li><a href="/index.html" aria-current="page">Início</a></li>
+          <li><a href="/doacoes.html">Doações</a></li>
+          <li><a href="/voluntariado.html">Voluntariado</a></li>
+        </ul>
+      </nav>
+      <div class="ferramentas" role="group" aria-label="Opções de aparência">
+        <button type="button" class="sec" data-tema="escuro" aria-pressed="false">Modo escuro</button>
+        <button type="button" class="sec" data-tema="alto-contraste" aria-pressed="false">Alto contraste</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="container">
+        <div>
+          <h1 id="titulo-hero">Juntos, transformamos vidas</h1>
+          <p>O Instituto Mãos Unidas leva alimentação, educação e acolhimento a famílias em situação de vulnerabilidade. Você pode fazer parte dessa rede.</p>
+          <p>
+            <a class="btn" href="/doacoes.html">Quero doar</a>
+            <a class="btn sec" href="/voluntariado.html">Quero ser voluntário(a)</a>
+          </p>
+        </div>
+        <picture>
+          <source type="image/webp" srcset="/img/hero-480.webp 480w, /img/hero-800.webp 800w, /img/hero-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 540px">
+          <img src="/img/hero-800.jpg" srcset="/img/hero-480.jpg 480w, /img/hero-800.jpg 800w, /img/hero-1200.jpg 1200w" sizes="(max-width: 760px) 92vw, 540px"
+               width="800" height="400" alt="Ilustração de um sol sobre montanhas azuis, símbolo de esperança do instituto" fetchpriority="high">
+        </picture>
+      </div>
+    </section>
+
+    <section class="alt" aria-labelledby="titulo-impacto">
+      <div class="container">
+        <h2 id="titulo-impacto">Nosso impacto</h2>
+        <div class="grade">
+          <article class="cartao"><p class="numero">1.200</p><h3>Famílias atendidas</h3><p class="sec-texto">Cestas básicas e acompanhamento mensal (dados fictícios).</p></article>
+          <article class="cartao"><p class="numero">350</p><h3>Crianças em reforço escolar</h3><p class="sec-texto">Aulas gratuitas no contraturno (dados fictícios).</p></article>
+          <article class="cartao"><p class="numero">80</p><h3>Voluntários ativos</h3><p class="sec-texto">Pessoas que dedicam parte do tempo à causa (dados fictícios).</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-como">
+      <div class="container">
+        <h2 id="titulo-como">Como você pode ajudar</h2>
+        <div class="grade">
+          <article class="cartao">
+            <h3>Doe recursos</h3>
+            <p>Sua contribuição financeira mantém nossas ações o ano todo.</p>
+            <a href="/doacoes.html">Saiba mais sobre como doar</a>
+          </article>
+          <article class="cartao">
+            <h3>Doe seu tempo</h3>
+            <p>Atue em ensino, cozinha solidária ou comunicação.</p>
+            <a href="/voluntariado.html">Saiba mais sobre o voluntariado</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Instituto Mãos Unidas (ONG fictícia para fins acadêmicos). Projeto sob licença MIT.</p>
+      <p><a href="#conteudo">Voltar ao conteúdo principal</a></p>
+    </div>
+  </footer>
+</body>
+</html>

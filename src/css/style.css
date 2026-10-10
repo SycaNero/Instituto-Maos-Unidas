@@ -1,0 +1,134 @@
+/* ===== Tokens de cor (tema claro = padrão) ===== */
+:root {
+  --fundo: #ffffff;
+  --fundo-alt: #f3f6fa;
+  --texto: #1a1a1a;
+  --texto-sec: #595959;
+  --link: #0b5cad;
+  --botao: #0b5cad;
+  --botao-texto: #ffffff;
+  --borda: #767676;
+  --erro: #E8453C;
+  --sucesso: #1b5e20;
+  --foco: #b35900;
+  color-scheme: light;
+}
+
+/* Preferência do sistema: escuro (só se o usuário não escolheu um tema) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --fundo: #121212; --fundo-alt: #1e1e1e; --texto: #e8e8e8; --texto-sec: #b0b0b0;
+    --link: #8ab4f8; --botao: #8ab4f8; --botao-texto: #121212; --borda: #8c8c8c;
+    --erro: #ff8a80; --sucesso: #81c784; --foco: #ffb74d; color-scheme: dark;
+  }
+}
+:root[data-theme="escuro"] {
+  --fundo: #121212; --fundo-alt: #1e1e1e; --texto: #e8e8e8; --texto-sec: #b0b0b0;
+  --link: #8ab4f8; --botao: #8ab4f8; --botao-texto: #121212; --borda: #8c8c8c;
+  --erro: #ff8a80; --sucesso: #81c784; --foco: #ffb74d; color-scheme: dark;
+}
+/* Alto contraste: escolhido pelo usuário ou preferência do sistema */
+:root[data-theme="alto-contraste"] {
+  --fundo: #000000; --fundo-alt: #000000; --texto: #ffffff; --texto-sec: #ffffff;
+  --link: #ffff00; --botao: #ffff00; --botao-texto: #000000; --borda: #ffffff;
+  --erro: #ff9a9a; --sucesso: #7dff7d; --foco: #00ffff; color-scheme: dark;
+}
+@media (prefers-contrast: more) {
+  :root:not([data-theme]) {
+    --fundo: #000000; --fundo-alt: #000000; --texto: #ffffff; --texto-sec: #ffffff;
+    --link: #ffff00; --botao: #ffff00; --botao-texto: #000000; --borda: #ffffff;
+    --erro: #ff9a9a; --sucesso: #7dff7d; --foco: #00ffff; color-scheme: dark;
+  }
+}
+
+/* ===== Base ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.0625rem; line-height: 1.65; background: var(--fundo); color: var(--texto);
+}
+img, picture { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { line-height: 1.25; }
+h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); margin: 0 0 .5rem; }
+h2 { font-size: 1.6rem; margin-top: 0; }
+a { color: var(--link); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 3px; }
+.container { width: min(1100px, 92%); margin-inline: auto; }
+section { padding: 2.5rem 0; }
+.alt { background: var(--fundo-alt); }
+.sec-texto { color: var(--texto-sec); }
+
+/* Foco sempre visível */
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; border-radius: 3px; }
+
+/* Link de salto */
+.pular {
+  position: absolute; left: .5rem; top: -4rem; background: var(--botao); color: var(--botao-texto);
+  padding: .6rem 1rem; z-index: 100; border-radius: 0 0 6px 6px; font-weight: 700;
+}
+.pular:focus { top: 0; }
+
+/* ===== Cabeçalho e menu ===== */
+header.topo { border-bottom: 2px solid var(--borda); background: var(--fundo); }
+.topo .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding: .75rem 0; }
+.marca { font-weight: 800; font-size: 1.2rem; color: var(--texto); text-decoration: none; display: flex; align-items: center; gap: .5rem; }
+.marca img { width: 32px; height: 32px; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: .25rem 1rem; flex-wrap: wrap; }
+nav a { display: inline-block; padding: .5rem .25rem; color: var(--texto); font-weight: 600; }
+nav a[aria-current="page"] { color: var(--link); text-decoration-thickness: 3px; }
+.menu-btn { display: none; }
+.ferramentas { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+/* ===== Botões ===== */
+.btn, button {
+  font: inherit; font-weight: 700; cursor: pointer; min-height: 44px; padding: .55rem 1.1rem;
+  border-radius: 8px; border: 2px solid var(--botao); background: var(--botao); color: var(--botao-texto);
+  text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+}
+.btn.sec, button.sec { background: transparent; color: var(--link); border-color: var(--link); }
+button[aria-pressed="true"].sec { background: var(--link); color: var(--fundo); }
+.btn:hover, button:hover { filter: brightness(1.12); }
+
+/* ===== Hero e cartões ===== */
+.hero .container { display: grid; gap: 2rem; align-items: center; grid-template-columns: 1fr 1fr; }
+.hero img { border-radius: 14px; width: 100%; }
+.grade { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.cartao { background: var(--fundo-alt); border: 2px solid var(--borda); border-radius: 12px; padding: 1.25rem; }
+.cartao h3 { margin-top: 0; }
+.numero { font-size: 2rem; font-weight: 800; color: var(--link); margin: 0; }
+
+/* ===== Formulários ===== */
+form { max-width: 600px; }
+.campo { margin-bottom: 1.25rem; }
+label, legend { display: block; font-weight: 700; margin-bottom: .35rem; }
+.dica { color: var(--texto-sec); font-size: .95rem; margin: 0 0 .35rem; }
+input, select, textarea {
+  width: 100%; font: inherit; padding: .65rem .75rem; min-height: 44px;
+  background: var(--fundo); color: var(--texto); border: 2px solid var(--borda); border-radius: 8px;
+}
+input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--erro); border-width: 3px; }
+.erro { color: var(--erro); font-weight: 700; margin: .35rem 0 0; display: flex; gap: .4rem; }
+.erro[hidden] { display: none; }
+.sucesso { border: 2px solid var(--sucesso); color: var(--sucesso); padding: 1rem; border-radius: 8px; font-weight: 700; }
+fieldset { border: 2px solid var(--borda); border-radius: 10px; padding: 1rem; margin: 0 0 1.25rem; }
+.opcoes { display: flex; flex-wrap: wrap; gap: .75rem; }
+.opcoes label { display: flex; align-items: center; gap: .4rem; font-weight: 600; margin: 0; }
+.opcoes input { width: 22px; height: 22px; min-height: 0; }
+
+footer { border-top: 2px solid var(--borda); padding: 1.5rem 0; margin-top: 2rem; color: var(--texto-sec); }
+
+/* ===== Responsivo ===== */
+@media (max-width: 760px) {
+  .hero .container { grid-template-columns: 1fr; }
+  .menu-btn { display: inline-flex; }
+  nav ul { display: none; flex-direction: column; width: 100%; }
+  nav ul.aberto { display: flex; }
+  .topo .container { align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

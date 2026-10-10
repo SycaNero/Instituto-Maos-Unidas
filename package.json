@@ -1,0 +1,16 @@
+{
+  "name": "instituto-maos-unidas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Site acessível (WCAG 2.1 AA) para uma ONG, com doações e voluntariado",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
